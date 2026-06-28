@@ -43,9 +43,9 @@ This portfolio was crafted entirely from scratch — no Bootstrap, no Tailwind, 
 
 ## ✦ Live Preview
 
-```
+
 [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-madhushankarkr.me-0f0f0f?style=for-the-badge&logo=vercel&logoColor=white)](https://www.madhushankarkr.me)
-```
+
 
 > Deployed on **Vercel** with a custom `.me` domain.
 > Global CDN, HTTPS, zero-config CI/CD on every `git push`.
