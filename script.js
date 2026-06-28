@@ -1,0 +1,1 @@
+// Deprecated: Logic migrated to src/main.ts
