@@ -44,7 +44,7 @@ This portfolio was crafted entirely from scratch — no Bootstrap, no Tailwind, 
 ## ✦ Live Preview
 
 ```
-🌐  https://madhu.me
+🌐  https://www.madhushankarkr.me/
 ```
 
 > Deployed on **Vercel** with a custom `.me` domain.
