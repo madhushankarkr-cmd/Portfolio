@@ -15,7 +15,7 @@
 
 <br />
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-madhu.me-0f0f0f?style=for-the-badge&logo=vercel&logoColor=white)](https://madhu.me)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-madhushankarkr.me-0f0f0f?style=for-the-badge&logo=vercel&logoColor=white)](https://madhu.me)
 [![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-Build_Tool-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
