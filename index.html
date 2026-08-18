@@ -22,6 +22,7 @@
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#certificates">Certificates</a>
+        <a href="#chatbot" class="nav-ai-btn"><i class="fas fa-robot"></i> AI Bot</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -515,22 +516,70 @@
       <h2 class="section-title">Ask Me About My Experience</h2>
 
       <div class="chatbot-box">
-        <div id="chat-messages" class="chat-messages">
-          <p class="chatbot-welcome">
-            Ask me about my skills, projects, education, or experience.
-          </p>
+        <!-- Chatbot Header -->
+        <div class="chatbot-header">
+          <div class="chatbot-header-info">
+            <div class="chatbot-avatar-badge">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div>
+              <h3>Madhu's AI Assistant</h3>
+              <span class="chatbot-status">
+                <span class="status-dot"></span> Online & Ready
+              </span>
+            </div>
+          </div>
+          <span class="chatbot-badge-tag"><i class="fas fa-bolt"></i> Powered by Groq AI</span>
         </div>
 
+        <!-- Quick Prompt Chips -->
+        <div class="chat-suggestions-wrapper">
+          <span class="suggestions-label">Quick Prompts:</span>
+          <div class="chat-suggestions">
+            <button type="button" class="chat-chip" data-prompt="What are Madhu's core technical skills?">
+              <i class="fas fa-code"></i> Core Skills
+            </button>
+            <button type="button" class="chat-chip" data-prompt="Tell me about Madhu's key projects">
+              <i class="fas fa-folder-open"></i> Key Projects
+            </button>
+            <button type="button" class="chat-chip" data-prompt="What is Madhu's education background?">
+              <i class="fas fa-graduation-cap"></i> Education
+            </button>
+            <button type="button" class="chat-chip" data-prompt="What certifications does Madhu hold?">
+              <i class="fas fa-award"></i> Certifications
+            </button>
+          </div>
+        </div>
+
+        <!-- Message Feed -->
+        <div id="chat-messages" class="chat-messages">
+          <div class="chat-message assistant-message welcome-card">
+            <div class="message-avatar">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="message-content">
+              <p>👋 <strong>Hi! I'm Madhu's AI Resume Assistant.</strong></p>
+              <p>Ask me anything about Madhu's technical skills, software projects, education at GLA University, or certifications!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Input Form -->
         <form id="chat-form" class="chat-form">
-          <input
-            id="chat-input"
-            type="text"
-            placeholder="Ask a question about me..."
-            maxlength="1000"
-            required
-          />
-          <button type="submit" class="btn btn-primary">
-            Ask
+          <div class="chat-input-wrapper">
+            <i class="fas fa-comment-dots chat-input-icon"></i>
+            <input
+              id="chat-input"
+              type="text"
+              placeholder="Ask a question about Madhu..."
+              maxlength="1000"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary chat-submit-btn" aria-label="Send Question">
+            <span>Send</span>
+            <i class="fas fa-paper-plane"></i>
           </button>
         </form>
       </div>
