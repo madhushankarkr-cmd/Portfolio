@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const icon = mobileToggle.querySelector("i");
     mobileToggle.addEventListener("click", () => {
       navbar.classList.toggle("nav-open");
-      
+
       // Toggle fontawesome icon
       if (icon) {
         if (navbar.classList.contains("nav-open")) {
@@ -182,4 +182,80 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // 8. Resume Chatbot Logic
+  const chatForm = document.querySelector("#chat-form") as HTMLFormElement | null;
+  const chatInput = document.querySelector("#chat-input") as HTMLInputElement | null;
+  const chatMessages = document.querySelector("#chat-messages") as HTMLElement | null;
+
+  const chatbotApiUrl = "https://portfolio-chatbot-api-9cle.onrender.com/chat";
+
+
+  if (chatForm && chatInput && chatMessages) {
+    const addChatMessage = (sender: string, text: string, className: string): void => {
+      const messageElement = document.createElement("p");
+      messageElement.className = `chat-message ${className}`;
+
+      const senderElement = document.createElement("strong");
+      senderElement.textContent = `${sender}: `;
+
+      const textElement = document.createElement("span");
+      textElement.textContent = text;
+
+      messageElement.appendChild(senderElement);
+      messageElement.appendChild(textElement);
+      chatMessages.appendChild(messageElement);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    };
+
+    chatForm.addEventListener("submit", async (event: SubmitEvent) => {
+      event.preventDefault();
+
+      const question = chatInput.value.trim();
+      if (!question) return;
+
+      addChatMessage("You", question, "user-message");
+      chatInput.value = "";
+      chatInput.disabled = true;
+
+      const loadingMessage = document.createElement("p");
+      loadingMessage.className = "chat-message assistant-message";
+      loadingMessage.textContent = "Assistant: Thinking...";
+      chatMessages.appendChild(loadingMessage);
+
+      try {
+        const response = await fetch(chatbotApiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ question })
+        });
+
+        if (!response.ok) {
+          throw new Error(`Chatbot request failed with status ${response.status}`);
+        }
+
+        const data: { answer?: string } = await response.json();
+        loadingMessage.remove();
+        addChatMessage(
+          "Assistant",
+          data.answer || "I could not generate an answer.",
+          "assistant-message"
+        );
+      } catch (error) {
+        console.error("Chatbot error:", error);
+        loadingMessage.remove();
+        addChatMessage(
+          "Assistant",
+          "Sorry, the chatbot is temporarily unavailable.",
+          "assistant-message"
+        );
+      } finally {
+        chatInput.disabled = false;
+        chatInput.focus();
+      }
+    });
+  }
+
 });
