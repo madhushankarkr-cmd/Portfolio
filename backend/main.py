@@ -30,7 +30,7 @@ if not GROQ_API_KEY:
 GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
 RESUME_FILENAME = os.getenv(
     "RESUME_FILENAME",
-    "Madhu_Shankar_kumar_Resume_7.pdf",
+    "Madhu_Shankar_Kumar_Resume_7.pdf",
 )
 
 # Keep the parsed resume in memory so every chat request does not re-read and
